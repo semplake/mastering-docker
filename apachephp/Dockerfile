@@ -4,7 +4,7 @@ LABEL description="dockerfile example for php and apache"
 
 ENV 	PHPVER=7 APACHEVER=2 MYSQLVER=7.2.8-r1
 
-RUN 	apk add --update apache${APACHEVER} php${PHPVER}-apache${APACHEVER} php${PHPVER} && \
+RUN 	apk add --update apache${APACHEVER} php${PHPVER}-apache${APACHEVER} php${PHPVER} docker-php-ext-install mysql && \
 	rm -rf /var/cache/apk/* && \
 	mkdir /run/apache${APACHEVER}/ && \
 	rm -rf /var/www/localhost/htdocs/index.html && \
