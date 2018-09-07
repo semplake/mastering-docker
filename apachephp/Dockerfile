@@ -2,9 +2,9 @@ FROM alpine:latest
 LABEL maintainer="camprette<ajibaskoro@bajau.com>"
 LABEL description="dockerfile example for php and apache"
 
-ENV 	PHPVER=7 APACHEVER=2 MYSQLVER=5.6.37-r0
+ENV 	PHPVER=7 APACHEVER=2 MYSQLVER=7.2.8-r1
 
-RUN 	apk add --update apache${APACHEVER} php${PHPVER}-apache${APACHEVER} php${PHPVER} php${PHPVER}-mysql-${MYSQLVER} && \
+RUN 	apk add --update apache${APACHEVER} php${PHPVER}-apache${APACHEVER} php${PHPVER} php${PHPVER}-mysqli-${MYSQLVER} && \
 	rm -rf /var/cache/apk/* && \
 	mkdir /run/apache${APACHEVER}/ && \
 	rm -rf /var/www/localhost/htdocs/index.html && \
